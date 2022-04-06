@@ -6,7 +6,6 @@ ENV XML_PATH=/STIGresults.xml
 
 # Update Packages
 RUN dnf -y update && dnf -y upgrade
-RUN install unzip
 
 # Install Ansible
 RUN yum -y install python3 python3-pip python3-virtualenv
@@ -22,7 +21,7 @@ RUN cd /docker-ubuntu-hardened/ && chmod +x ./dockersetup.sh
 RUN cd /docker-ubuntu-hardened && bash ./dockersetup.sh
 
 RUN wget https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_RHEL_8_V1R5_STIG_Ansible.zip
-RUN unzip -d /U_RHEL_8_V1R5_STIG_Ansible/ U_RHEL_8_V1R5_STIG_Ansible.zip 
-RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && unzip -d /U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/ rhel8STIG-ansible.zip
+RUN tar -xvf U_RHEL_8_V1R5_STIG_Ansible.zip 
+RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && tar -xvf rhel8STIG-ansible.zip
 RUN cd /U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/ && chmod +x ./enforce.sh && bash ./enforce.sh
 ENTRYPOINT [ "/bin/bash" ]
