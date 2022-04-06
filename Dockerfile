@@ -5,7 +5,7 @@ ENV STIG_PATH=/U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/roles/rhel8STIG/file
 ENV XML_PATH=/STIGresults.xml
 
 # Update and Install Supporting Packages
-RUN dnf -y update && dnf -y upgrade && dnf -y install git wget curl kmod python3 python3-pip python3-virtualenv systemd at net-tools
+RUN dnf -y update && dnf -y upgrade && dnf -y install git wget curl kmod python3 python3-pip python3-virtualenv systemd at net-tools zip unzip
 RUN alternatives --set python /usr/bin/python3
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade setuptools
@@ -16,8 +16,8 @@ RUN yum -y --nobest install https://dl.fedoraproject.org/pub/epel/epel-release-l
 RUN yum -y --nobest --skip-broken install ansible
 
 RUN wget https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_RHEL_8_V1R5_STIG_Ansible.zip
-RUN tar -xvf U_RHEL_8_V1R5_STIG_Ansible.zip 
-RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && tar -xvf rhel8STIG-ansible.zip
+RUN unzip U_RHEL_8_V1R5_STIG_Ansible.zip 
+RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && unzip rhel8STIG-ansible.zip
 
 RUN git clone https://github.com/simeononsecurity/docker-ubuntu-hardened.git
 RUN cd /docker-ubuntu-hardened/ && chmod +x ./dockersetup.sh
