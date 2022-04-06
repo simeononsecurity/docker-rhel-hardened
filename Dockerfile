@@ -6,7 +6,7 @@ ENV TERM=xterm
 RUN dnf -y update && dnf -y upgrade
 
 # Install Ansible
-RUN yum -y install python3 python3-pip python3-dev
+RUN yum -y install python3 python3-pip
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN yum -y install ansible 
 
