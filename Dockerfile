@@ -6,9 +6,12 @@ ENV TERM=xterm
 RUN dnf -y update && dnf -y upgrade
 
 # Install Ansible
+
 RUN yum -y install python3 python3-pip
+RUN pip install ansible
+RUN yum -y --nobest install epel-release
 RUN yum -y --nobest install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-RUN yum -y install ansible 
+RUN yum -y install ansible
 
 RUN git clone https://github.com/simeononsecurity/docker-ubuntu-hardened.git
 RUN cd /docker-ubuntu-hardened/ && chmod +x ./dockersetup.sh
