@@ -24,6 +24,6 @@ RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && unzip -d '/U_RHEL_8_V1R5_STIG_Ansible/rhe
 RUN git clone https://github.com/simeononsecurity/docker-rhel-hardened.git
 RUN ls -la
 RUN cd /docker-rhel-hardened/ && chmod +x ./dockersetup.sh
-RUN cd /docker-rhel-hardened/ && bash ./dockersetup.sh
+RUN cd /docker-rhel-hardened/ && bash ./dockersetup.sh ; exit 0
 
 ENTRYPOINT [ "/bin/bash" ]
