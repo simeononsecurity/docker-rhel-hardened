@@ -7,7 +7,10 @@ RUN dnf -y update && dnf -y upgrade
 
 # Install Ansible
 
-RUN yum -y install python3 python3-pip
+RUN yum -y install python3 python3-pip python3-virtualenv
+RUN alternatives --set python /usr/bin/python3
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade setuptools
 RUN python3 -m pip install ansible
 RUN yum -y --nobest install epel-release
 RUN yum -y --nobest install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
