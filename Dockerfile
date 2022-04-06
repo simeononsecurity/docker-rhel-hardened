@@ -5,7 +5,7 @@ ENV STIG_PATH=/U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/roles/rhel8STIG/file
 ENV XML_PATH=/STIGresults.xml
 
 # Update Packages
-RUN dnf -y update && dnf -y upgrade && dnf install git
+RUN dnf -y update && dnf -y upgrade && dnf -y install git
 
 # Install Ansible
 RUN yum -y install python3 python3-pip python3-virtualenv
