@@ -1,4 +1,4 @@
-FROM redhat/ubi8-minimal
+FROM redhat/ubi8
 ENV container docker
 ENV TERM=xterm
 
