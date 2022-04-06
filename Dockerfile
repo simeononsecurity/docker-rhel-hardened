@@ -16,9 +16,9 @@ RUN yum -y --nobest install https://dl.fedoraproject.org/pub/epel/epel-release-l
 RUN yum -y --nobest --skip-broken install ansible
 
 RUN wget https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_RHEL_8_V1R5_STIG_Ansible.zip
-RUN unzip U_RHEL_8_V1R5_STIG_Ansible.zip 
+RUN unzip U_RHEL_8_V1R5_STIG_Ansible.zip /U_RHEL_8_V1R5_STIG_Ansible/
 RUN ls -la
-RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && unzip rhel8STIG-ansible.zip
+RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && unzip rhel8STIG-ansible.zip /U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/
 
 RUN git clone https://github.com/simeononsecurity/docker-ubuntu-hardened.git
 RUN cd /docker-ubuntu-hardened/ && chmod +x ./dockersetup.sh
