@@ -20,7 +20,7 @@ RUN unzip U_RHEL_8_V1R5_STIG_Ansible.zip -d '/U_RHEL_8_V1R5_STIG_Ansible/'
 RUN ls -la
 RUN cd /U_RHEL_8_V1R5_STIG_Ansible/ && unzip -d '/U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/' rhel8STIG-ansible.zip
 
-RUN git clone https://github.com/simeononsecurity/docker-ubuntu-hardened.git
+RUN git clone https://github.com/simeononsecurity/docker-rhel-hardened.git
 RUN cd /docker-ubuntu-hardened/ && chmod +x ./dockersetup.sh
 RUN cd /docker-ubuntu-hardened && bash ./dockersetup.sh
 
