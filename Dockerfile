@@ -14,7 +14,7 @@ RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade setuptools
 RUN python3 -m pip install ansible
 RUN yum -y --nobest install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-RUN yum -y --nobest install ansible
+RUN yum -y --nobest --skip-broken install ansible
 
 RUN git clone https://github.com/simeononsecurity/docker-ubuntu-hardened.git
 RUN cd /docker-ubuntu-hardened/ && chmod +x ./dockersetup.sh
