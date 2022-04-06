@@ -5,7 +5,7 @@ ENV STIG_PATH=/U_RHEL_8_V1R5_STIG_Ansible/rhel8STIG-ansible/roles/rhel8STIG/file
 ENV XML_PATH=/STIGresults.xml
 
 # Update and Install Supporting Packages
-RUN dnf -y update && dnf -y upgrade && dnf -y install git wget curl firewalld kmod python3 python3-pip python3-virtualenv systemd aide auditd apparmor rkhunter at net-tools rng-tools psacct rsyslog-gnutls audispd-plugins.x86_64
+RUN dnf -y update && dnf -y upgrade && dnf -y install git wget curl kmod python3 python3-pip python3-virtualenv systemd at net-tools
 RUN alternatives --set python /usr/bin/python3
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --upgrade setuptools
