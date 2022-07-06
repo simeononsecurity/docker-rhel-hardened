@@ -1,4 +1,9 @@
 FROM redhat/ubi8
+
+LABEL org.opencontainers.image.source="https://github.com/simeononsecurity/docker-rhel-hardened"
+LABEL org.opencontainers.image.description="Prehardenend RHEL Docker Container with arm64 and amd64 support"
+LABEL org.opencontainers.image.authors="simeononsecurity"
+
 ENV container docker
 ENV TERM=xterm
 ENV STIG_PATH=/U_RHEL_8_V1R6_STIG_Ansible/rhel8STIG-ansible/roles/rhel8STIG/files/_Red_Hat_Enterprise_Linux_8_STIG_V1R6_Manual-xccdf.xml
