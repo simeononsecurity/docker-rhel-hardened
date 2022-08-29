@@ -22,8 +22,8 @@ RUN yum -y --nobest --skip-broken install ansible
 
 #Setup DoD Ansible Playbook for RHEL8
 RUN wget https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/U_RHEL_8_V1R7_STIG_Ansible.zip
-RUN unzip U_RHEL_8_V1R6_STIG_Ansible.zip -d '/U_RHEL_8_V1R7_STIG_Ansible/'
-RUN cd /U_RHEL_8_V1R6_STIG_Ansible/ && unzip -d '/U_RHEL_8_V1R7_STIG_Ansible/rhel8STIG-ansible/' rhel8STIG-ansible.zip
+RUN unzip U_RHEL_8_V1R7_STIG_Ansible.zip -d '/U_RHEL_8_V1R7_STIG_Ansible/'
+RUN cd /U_RHEL_8_V1R7_STIG_Ansible/ && unzip -d '/U_RHEL_8_V1R7_STIG_Ansible/rhel8STIG-ansible/' rhel8STIG-ansible.zip
 
 #Run konstruktoid.hardening and DoD Rhel 8 Playbook
 RUN git clone https://github.com/simeononsecurity/docker-rhel-hardened.git
