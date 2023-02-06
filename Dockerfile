@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.authors="simeononsecurity"
 
 ENV container docker
 ENV TERM=xterm
-ENV STIG_PATH=/U_RHEL_8_V1R9_STIG_Ansible/rhel8STIG-ansible/roles/rhel8STIG/files/_Red_Hat_Enterprise_Linux_8_STIG_V1R7_Manual-xccdf.xml
+ENV STIG_PATH=/U_RHEL_8_V1R9_STIG_Ansible/rhel8STIG-ansible/roles/rhel8STIG/files/_Red_Hat_Enterprise_Linux_8_STIG_V1R9_Manual-xccdf.xml
 ENV XML_PATH=/STIGresults.xml
 
 # Update and Install Supporting Packages
