@@ -31,4 +31,7 @@ RUN ls -la
 RUN cd /docker-rhel-hardened/ && chmod +x ./dockersetup.sh
 RUN cd /docker-rhel-hardened/ && bash ./dockersetup.sh ; exit 0
 
+# Clean RPM Cache
+RUN dnf clean all
+
 ENTRYPOINT [ "/bin/bash" ]
